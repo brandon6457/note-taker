@@ -13,7 +13,7 @@ const readAndAppend = (content, file) => {
       if (err) {
          console.error(err);
       } else {
-         const parseData = JSON.parse(data);
+         const parsedData = JSON.parse(data);
          parsedData.push(content);
          writeToFile(file, parsedData);
       }

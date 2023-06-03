@@ -18,11 +18,11 @@ note.post('/', (req, res) => {
       readAndAppend(newNote, './db/db.json');
       res.json(`Note was added successfully`);
    } else {
-      res.errored(`There was an error adding the note`);
+      res.error(`There was an error adding the note`);
    }
 });
 
-note.delete('/', (req, res) => {
+note.delete('/:id', (req, res) => {
    const id = req.params.id;
    readFromFile('./db/db.json').then((data) => {
       const newData = JSON.parse(data);
